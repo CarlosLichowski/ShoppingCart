@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <Container classname="mt-4">
         <h1>Home</h1>
-        <p>Pagina Principal de la app</p>
+        <p>Rutas protegicas + Carrito + Login</p>
         </Container>
   )
 }
