@@ -1,19 +1,21 @@
 import { useNavigate } from "react-router-dom";
 import { Container, Form, Button } from "react-bootstrap";
+import { useAuth } from '../context/AuthContext';
 
 export default function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleLogin = () => {
-    localStorage.setItem('auth', 'true');
+    login();
     navigate('/perfil/usuario123');
   };
 
   return (
-    <Container className="mt-5" style={{ maxWidth: 400 }}>
+    <Container className="mt-5 login-form-container" style={{ maxWidth: 400 }}> 
       <h2>Iniciar sesión</h2>
       <Form>
-        <Form.Group>
+        <Form.Group className="mb-3">
           <Form.Label>Usuario</Form.Label>
           <Form.Control type="text" />
         </Form.Group>
